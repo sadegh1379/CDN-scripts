@@ -31,7 +31,7 @@ jobs:
       # 5. Commit and push the minified file
       - name: Commit and push minified file
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_CDN_TOKEN }} # Use the secret token here
+          GH_CDN_TOKEN: ${{ secrets.GH_CDN_TOKEN }} # Use the secret token here
         run: |
           git config user.name "Sadegh Akbari"
           git config user.email "actions@github.com"
