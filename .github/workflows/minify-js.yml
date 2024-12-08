@@ -26,7 +26,7 @@ jobs:
 
       # 4. Minify the JavaScript file
       - name: Minify JavaScript
-        run: terser your-script.js -o your-script.min.js
+        run: terser simple-script.js -o simple-script.min.js
 
       # 5. Commit and push the minified file
       - name: Commit and push minified file
