@@ -28,6 +28,12 @@ jobs:
       - name: Minify JavaScript
         run: terser simple-script.js -o simple-script.min.js
 
+      - name: setup git config
+        run: |
+          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+          git config user.name "Sadegh Akbari"
+          git config user.email "akbarisadegh382@gmail.com"
+
       # 5. Commit and push the minified file
       - name: Commit and push minified file
         run: |
