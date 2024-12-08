@@ -28,15 +28,17 @@ jobs:
       - name: Minify JavaScript
         run: terser simple-script.js -o simple-script.min.js
 
-      - name: setup git config
+      # 5. Configure Git
+      - name: Configure Git
         run: |
-          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
           git config user.name "Sadegh Akbari"
           git config user.email "akbarisadegh382@gmail.com"
 
-      # 5. Commit and push the minified file
-      - name: Commit and push minified file
+      # 6. Commit and Push Changes
+      - name: Commit and Push Minified JS
+        env:
+          GH_CDN_TOKEN: ${{ secrets.GH_CDN_TOKEN }}
         run: |
           git add simple-script.min.js
           git commit -m "Add minified JS file"
-          git push origin master
+          git push https://SadeghAkbari:${{ secrets.GH_CDN_TOKEN }}@github.com/sadegh1379/CRN-scripts.git master
