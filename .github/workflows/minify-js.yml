@@ -41,4 +41,4 @@ jobs:
         run: |
           git add simple-script.min.js
           git commit -m "Add minified JS file"
-          git push https://sadegh1379:${{ secrets.GH_CDN_TOKEN }}@github.com/sadegh1379/CRN-scripts.git master
+          git push https://sadegh1379:${{ secrets.GH_CDN_TOKEN }}@github.com/sadegh1379/CDN-scripts.git master
